@@ -1,30 +1,34 @@
 import styled from "styled-components";
+import background from "../images/background.jpg";
 
-export const Background = styled.img`
-  width: 100%;
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-`;
-
-export const Wrapper = styled.div`
+export const FlexWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+`;
+export const Background = styled.img`
+  width: 100%;
+  height: 100vh;
+  background-image: url(${background});
+  background-position: center;
+  background-size: cover;
+`;
+
+export const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   font-family: "Bangers", cursive;
-  width: 50%;
+  margin: 1rem auto;
 
-  .HomeLink {
+  .homelink {
     width: 15rem;
     height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-
     text-decoration: none;
     color: white;
     background-color: rgba(82, 15, 7);
@@ -53,28 +57,29 @@ export const Wrapper = styled.div`
 `;
 
 export const Logo = styled.img`
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  width: 50%;
+  width: 80%;
   height: auto;
+  margin: 0 auto;
 `;
 
-export const DescWrapper = styled.div`
+export const Wrapper = styled.div`
   color: rgba(82, 15, 7);
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Description = styled.p`
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(6px);
+  max-height: 30%;
   padding: 1.5rem;
   border-radius: 1rem;
   text-align: justify;
   font-family: "Montserrat", sans-serif;
   font-weight: bolder;
   letter-spacing: 0.1rem;
+
+  @media screen and (max-width: 600px) {
+    font-size: 0.8rem;
+  }
 `;
