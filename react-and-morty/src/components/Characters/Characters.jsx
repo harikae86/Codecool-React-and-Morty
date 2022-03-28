@@ -5,6 +5,7 @@ import {
   GridCard,
   Title,
   PageDiv,
+  FlexWrapper,
 } from "./Characters.styles";
 import { useCharacters } from "../../api/useData";
 import Pagination from "../Pagination/Pagination";
@@ -20,31 +21,33 @@ const Characters = () => {
         Back
       </Link>
       <Title>Characters</Title>
-      <Pagination
-        total={42}
-        current={pageNum}
-        perPage={20}
-        onChange={({ current }) => setPageNum(current)}
-      />
-      <GridContainer>
-        {characters.results?.map((character) => {
-          return (
-            <Link key={character.id} to={`/character/${character.id}`}>
-              <GridCard>
-                <GridImg src={character.image} alt="character" />
-                <h3 className="on-character-card">{character.name}</h3>
-                <p className="on-character-card">{character.species}</p>
-              </GridCard>
-            </Link>
-          );
-        })}
-      </GridContainer>
-      <Pagination
-        total={42}
-        current={pageNum}
-        perPage={20}
-        onChange={({ current }) => setPageNum(current)}
-      />
+      <FlexWrapper>
+        <Pagination
+          total={42}
+          current={pageNum}
+          perPage={20}
+          onChange={({ current }) => setPageNum(current)}
+        />
+        <GridContainer>
+          {characters.results?.map((character) => {
+            return (
+              <Link key={character.id} to={`/character/${character.id}`}>
+                <GridCard>
+                  <GridImg src={character.image} alt="character" />
+                  <h3 className="on-character-card">{character.name}</h3>
+                  <p className="on-character-card">{character.species}</p>
+                </GridCard>
+              </Link>
+            );
+          })}
+        </GridContainer>
+        <Pagination
+          total={42}
+          current={pageNum}
+          perPage={20}
+          onChange={({ current }) => setPageNum(current)}
+        />
+      </FlexWrapper>
     </PageDiv>
   );
 };

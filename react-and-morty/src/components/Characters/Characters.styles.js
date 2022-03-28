@@ -5,7 +5,7 @@ export const GridContainer = styled.div`
   height: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 1rem;
 `;
 
@@ -36,6 +36,12 @@ export const PageDiv = styled.div`
   }
 `;
 
+export const FlexWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
 export const Title = styled.h1`
   font-family: "Bangers", cursive;
   text-align: center;
@@ -49,9 +55,7 @@ export const Title = styled.h1`
 export const GridCard = styled.div`
   border-radius: 5px;
   text-align: center;
-
-  width: 98%;
-
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 3rem;
